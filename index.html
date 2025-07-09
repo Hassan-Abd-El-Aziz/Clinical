@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عيادة الدكتور حسن عبد العزيز</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/clinic-favicon.png" type="image/png" />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          fontFamily: {
+            sans: ["Tajawal", "sans-serif"],
+          },
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              secondary: "#10B981",
+              dark: "#1E293B",
+              light: "#F8FAFC",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300"
+  >
+
+
+
+    <!-- Header/Navigation -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
+     
+        <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <a href="#" class="flex items-center">
+            <img
+              src="assets/icons/logo (3).png"
+              alt="Clinic Logo"
+              class="h-10 mr-2"
+            />
+            <span class="text-xl font-bold text-primary"></span>
+             الدكتور</span
+            >
+          </a>
+        </div>
+
+        <div class="hidden md:flex space-x-1 space-x-reverse">
+          <a
+            href="#home"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >الرئيسية</a
+          >
+          <a
+            href="#services"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >الخدمات</a
+          >
+          <a
+            href="#about"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >عن العيادة</a
+          >
+          <a
+            href="#doctors"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >الأطباء</a
+          >
+          <a
+            href="#testimonials"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >آراء المرضى</a
+          >
+          <a
+            href="#contact"
+            class="nav-link px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+            >اتصل بنا</a
+          >
+        </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class=" top-4 right-4 z-50">
+      <button
+        id="darkModeToggle"
+        class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full"
+      >
+        <i class="fas fa-moon dark:hidden"></i>
+        <i class="fas fa-sun hidden dark:block"></i>
+      </button>
+    </div>
+        <div class="md:hidden">
+          <button
+            id="mobileMenuButton"
+            class="text-gray-700 dark:text-gray-200"
+          >
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white dark:bg-gray-800 absolute w-full left-0 shadow-lg py-2"
+      >
+        <a
+          href="#home"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >الرئيسية</a
+        >
+        <a
+          href="#services"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >الخدمات</a
+        >
+        <a
+          href="#about"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >عن العيادة</a
+        >
+        <a
+          href="#doctors"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >الأطباء</a
+        >
+        <a
+          href="#testimonials"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >آراء المرضى</a
+        >
+        <a
+          href="#contact"
+          class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 nav-link"
+          >اتصل بنا</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 py-20"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+          <h1
+            class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
+          >
+            <span class="text-primary">رعاية طبية</span> متكاملة لصحة أفضل
+          </h1>
+          <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+            نقدم في عيادتنا أفضل الخدمات الطبية بأعلى معايير الجودة والكفاءة.
+            فريقنا من الأطباء المتخصصين جاهز لرعايتك في أي وقت.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition"
+            >
+              حجز موعد
+            </a>
+            <a
+              href="#services"
+              class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition"
+            >
+              خدماتنا
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img
+            src="assets/images/doctor.png"
+            alt="Doctor"
+            class="w-150 max-w-lg mx-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">خدماتنا الطبية</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            نقدم مجموعة واسعة من الخدمات الطبية لتلبية جميع احتياجاتك الصحية
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="p-6">
+              <div
+                class="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-heartbeat text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">فحوصات القلب</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                فحوصات شاملة للقلب والأوعية الدموية باستخدام أحدث التقنيات
+                للتشخيص الدقيق.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 "
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="p-6">
+              <div
+                class="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-bone text-2xl text-secondary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2"><a href="bones.html" target="_blank">جراحة العظام</a></h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                علاج كسور العظام وإصابات المفاصل وجراحات العمود الفقري بمهارة
+                عالية.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="p-6">
+              <div
+                class="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-eye text-2xl text-purple-500"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">طب العيون</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                فحوصات العيون الشاملة وعلاج مشاكل النظر وجراحات العيون الدقيقة.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="p-6">
+              <div
+                class="bg-yellow-100 dark:bg-yellow-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-tooth text-2xl text-yellow-500"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">طب الأسنان</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                علاجات تجميل الأسنان وزراعة الأسنان وعلاج مشاكل اللثة بأحدث
+                التقنيات.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="p-6">
+              <div
+                class="bg-red-100 dark:bg-red-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-brain text-2xl text-red-500"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">طب الأعصاب</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                تشخيص وعلاج أمراض الجهاز العصبي والدماغ باستخدام أحدث الأجهزة
+                الطبية.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="p-6">
+              <div
+                class="bg-pink-100 dark:bg-pink-900 w-16 h-16 rounded-full flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-baby text-2xl text-pink-500"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">طب الأطفال</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                رعاية متكاملة للأطفال من الولادة حتى المراهقة بمتابعة نموهم
+                وتطورهم.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+            <img
+              src="assets/images/clinic-interior.jpg"
+              alt="Clinic Interior"
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+          <div class="md:w-1/2 md:pr-10" data-aos="fade-left">
+            <h2 class="text-3xl font-bold mb-6">عن عيادتنا</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              تأسست عيادة الدكتور أحمد عام 2010 بهدف تقديم رعاية طبية شاملة
+              بمعايير عالمية. نحن نؤمن بأن الرعاية الصحية الجيدة حق لكل إنسان،
+              ولذلك نعمل جاهدين لتقديم أفضل الخدمات الطبية بأسعار مناسبة.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                  <i class="fas fa-check text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">فريق طبي متخصص</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    فريق من الأطباء الاستشاريين والأخصائيين في مختلف التخصصات
+                    الطبية.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                  <i class="fas fa-check text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">أجهزة طبية متطورة</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    أحدث الأجهزة والتقنيات الطبية للتشخيص الدقيق والعلاج الفعال.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                  <i class="fas fa-check text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">رعاية شاملة</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    متابعة مستمرة للمرضى وبرامج وقائية للحفاظ على الصحة العامة.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">فريق الأطباء</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            تعرف على فريقنا من الأطباء المتخصصين ذوي الخبرة الواسعة
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Doctor 1 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="assets/images/doctor1.jpg"
+              alt="Doctor 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold">د. أحمد محمد</h3>
+              <p class="text-primary mb-3">استشاري أمراض القلب</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                دكتوراه في أمراض القلب من جامعة القاهرة، عضو الكلية الملكية
+                لأطباء القلب بلندن.
+              </p>
+              <div class="flex space-x-2 space-x-reverse">
+                <a href="#" class="text-gray-500 hover:text-primary transition">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-primary transition">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-primary transition">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 2 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="assets/images/doctor2.jpg"
+              alt="Doctor 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold">د. سارة علي</h3>
+              <p class="text-secondary mb-3">استشارية طب الأطفال</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                ماجستير في طب الأطفال من جامعة عين شمس، عضو الجمعية المصرية لطب
+                الأطفال.
+              </p>
+              <div class="flex space-x-2 space-x-reverse">
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-secondary transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-secondary transition"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-secondary transition"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 3 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="assets/images/doctor3.jpg"
+              alt="Doctor 3"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold">د. خالد محمود</h3>
+              <p class="text-purple-500 mb-3">استشاري جراحة العظام</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                دكتوراه في جراحة العظام من جامعة الإسكندرية، عضو الجمعية الدولية
+                لجراحة العظام.
+              </p>
+              <div class="flex space-x-2 space-x-reverse">
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-purple-500 transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-purple-500 transition"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-purple-500 transition"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 4 -->
+          <div
+            class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="assets/images/doctor4.jpg"
+              alt="Doctor 4"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold">د. ليلى أحمد</h3>
+              <p class="text-pink-500 mb-3">استشارية طب العيون</p>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                زمالة الكلية الملكية لأطباء العيون بلندن، متخصصة في جراحات
+                الليزك وعلاج الشبكية.
+              </p>
+              <div class="flex space-x-2 space-x-reverse">
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-pink-500 transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-pink-500 transition"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-pink-500 transition"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">آراء المرضى</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            ما يقوله مرضانا عن تجربتهم مع عيادتنا
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="assets/images/patient1.jpg"
+                alt="Patient 1"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">محمد عبد الرحمن</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">
+              "تجربة رائعة مع الدكتور أحمد، تشخيص دقيق وعلاج فعال. العيادة نظيفة
+              جدا والمواعيد محترمة. شكرا للفريق الطبي المتميز."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="assets/images/patient2.jpg"
+                alt="Patient 2"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">أميرة سعد</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">
+              "الدكتورة سارة ممتازة في التعامل مع الأطفال، ابنتي كانت تخاف من
+              الأطباء لكن د. سارة تعاملت معها بحب وصبر. شكرا جزيلا."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="assets/images/patient3.jpg"
+                alt="Patient 3"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 class="font-bold">علي حسين</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">
+              "أجريت عملية جراحية في العيادة وكانت النتيجة ممتازة. الفريق الطبي
+              محترف جدا والمتابعة بعد العملية كانت ممتازة. أشكر الدكتور خالد على
+              جهوده."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6">هل تحتاج إلى استشارة طبية؟</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+          نحن هنا لمساعدتك في أي وقت. احجز موعدك الآن وسنقدم لك أفضل رعاية طبية
+          ممكنة.
+        </p>
+        <a
+          href="#contact"
+          class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block"
+        >
+          احجز موعد الآن
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">اتصل بنا</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            تواصل معنا للحصول على أي استفسار أو لحجز موعد في العيادة
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2" data-aos="fade-right">
+            <div
+              class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md mb-8"
+            >
+              <h3 class="text-xl font-bold mb-4">معلومات التواصل</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                    <i class="fas fa-map-marker-alt text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">العنوان</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      123 شارع المدينة، الحي الغربي، القاهرة، مصر
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                    <i class="fas fa-phone-alt text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">هاتف العيادة</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      +20 123 456 7890
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                    <i class="fas fa-envelope text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">البريد الإلكتروني</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      info@dr-ahmed-clinic.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4">
+                    <i class="fas fa-clock text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">ساعات العمل</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      الأحد - الخميس: 9 ص - 9 م<br />
+                      الجمعة - السبت: 4 م - 9 م
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+              <h3 class="text-xl font-bold mb-4">تابعنا على</h3>
+              <div
+                class="flex space-x-4 space-x-reverse justify-center md:justify-start"
+              >
+                <a
+                  href="#"
+                  class="bg-gray-100 dark:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-100 dark:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-100 dark:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-100 dark:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-100 dark:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2" data-aos="fade-left">
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+              <h3 class="text-xl font-bold mb-4">أرسل لنا رسالة</h3>
+              <form id="contactForm" class="space-y-4">
+                <div>
+                  <label for="name" class="block mb-1 font-medium"
+                    >الاسم الكامل</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block mb-1 font-medium"
+                    >البريد الإلكتروني</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block mb-1 font-medium"
+                    >رقم الهاتف</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800"
+                  />
+                </div>
+                <div>
+                  <label for="subject" class="block mb-1 font-medium"
+                    >الموضوع</label
+                  >
+                  <select
+                    id="subject"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800"
+                  >
+                    <option value="">اختر الموضوع</option>
+                    <option value="appointment">حجز موعد</option>
+                    <option value="inquiry">استفسار عام</option>
+                    <option value="feedback">ملاحظات أو شكوى</option>
+                    <option value="other">أخرى</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="message" class="block mb-1 font-medium"
+                    >الرسالة</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition w-full"
+                >
+                  إرسال الرسالة
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.676254143038!2d31.235949315115!3d30.04441958188338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458409e9a8a4c1b%3A0x3f3a3b3b3b3b3b3b!2s123%20City%20Street%2C%20Cairo%2C%20Egypt!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">عيادة الدكتور أحمد</h3>
+            <p class="text-gray-400">
+              نقدم رعاية طبية متكاملة بمعايير عالمية لتلبية جميع احتياجاتك
+              الصحية.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">روابط سريعة</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition"
+                  >الخدمات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >عن العيادة</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#doctors"
+                  class="text-gray-400 hover:text-white transition"
+                  >الأطباء</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">الخدمات</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >فحوصات القلب</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >جراحة العظام</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >طب العيون</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >طب الأسنان</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >طب الأطفال</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">النشرة البريدية</h4>
+            <p class="text-gray-400 mb-4">
+              اشترك في نشرتنا البريدية لتصلك آخر العروض والمقالات الطبية.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="بريدك الإلكتروني"
+                class="px-4 py-2 rounded-r-lg focus:outline-none text-gray-800 w-full"
+              />
+              <button
+                type="submit"
+                class="bg-primary hover:bg-blue-700 px-4 py-2 rounded-l-lg"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm">
+            &copy; 2023 عيادة الدكتور أحمد. جميع الحقوق محفوظة.
+          </p>
+          <div class="flex space-x-4 space-x-reverse mt-4 md:mt-0">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/aos-init.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

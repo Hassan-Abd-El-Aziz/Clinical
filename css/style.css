@@ -1,0 +1,49 @@
+/* Custom Styles */
+body {
+  scroll-behavior: smooth;
+}
+
+/* RTL Adjustments */
+[dir="rtl"] .fa-arrow-left:before {
+  content: "\f061";
+}
+
+[dir="rtl"] .fa-arrow-right:before {
+  content: "\f060";
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1d4ed8;
+}

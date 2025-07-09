@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عيادة جراحة العظام - د. أحمد محمد</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .header {
+        background-color: #1a5276;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .nav {
+        background-color: #2980b9;
+        overflow: hidden;
+      }
+
+      .nav a {
+        float: right;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .nav a:hover {
+        background-color: #3498db;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      .profile {
+        display: flex;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      .profile-img {
+        width: 300px;
+        background-color: #eee;
+      }
+
+      .profile-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .profile-info {
+        padding: 20px;
+        flex: 1;
+      }
+
+      .profile-info h2 {
+        color: #1a5276;
+        margin-top: 0;
+      }
+
+      .specialties {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .specialties-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+      }
+
+      .specialty-item {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border-right: 4px solid #2980b9;
+      }
+
+      .appointment {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .btn {
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        background-color: #3498db;
+      }
+
+      .footer {
+        background-color: #1a5276;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+      }
+
+      /* زر الواتساب الثابت */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        left: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #128c7e;
+      }
+
+      /* زر العودة للأعلى */
+      .back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background-color: #2980b9;
+        color: white;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background-color: #3498db;
+      }
+
+      @media (max-width: 768px) {
+        .profile {
+          flex-direction: column;
+        }
+
+        .profile-img {
+          width: 100%;
+        }
+
+        .whatsapp-float,
+        .back-to-top {
+          width: 50px;
+          height: 50px;
+          font-size: 24px;
+          bottom: 20px;
+        }
+
+        .whatsapp-float {
+          left: 20px;
+        }
+
+        .back-to-top {
+          right: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- زر الواتساب الثابت -->
+    <a href="https://wa.me/966501234567" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="header">
+      <h1>عيادة جراحة العظام والمفاصل</h1>
+      <p>الرعاية المتكاملة لصحة عظامك</p>
+    </div>
+
+    <div class="nav">
+      <a href="#">اتصل بنا</a>
+      <a href="#">الأسئلة الشائعة</a>
+      <a href="#">خدماتنا</a>
+      <a href="#">الرئيسية</a>
+    </div>
+
+    <div class="container">
+      <div class="profile">
+        <div class="profile-img">
+          <img
+            src="https://via.placeholder.com/300x400"
+            alt="دكتور جراحة العظام"
+          />
+        </div>
+        <div class="profile-info">
+          <h2>د. أحمد محمد</h2>
+          <p>استشاري جراحة العظام والمفاصل</p>
+          <p>خريج جامعة القاهرة - زمالة جراحة العظام من جامعة هارفارد</p>
+          <p>أكثر من 15 عاماً من الخبرة في مجال جراحة العظام والكسور</p>
+          <p>عضو الجمعية المصرية لجراحة العظام</p>
+          <p>عضو الجمعية الأمريكية لجراحة العظام</p>
+        </div>
+      </div>
+
+      <div class="specialties">
+        <h2>تخصصات الدكتور</h2>
+        <div class="specialties-list">
+          <div class="specialty-item">
+            <h3>جراحات العمود الفقري</h3>
+            <p>
+              علاج الانزلاق الغضروفي، تضيق القناة الشوكية، وجراحات تثبيت الفقرات
+            </p>
+          </div>
+          <div class="specialty-item">
+            <h3>جراحات المفاصل التعويضية</h3>
+            <p>استبدال مفصل الركبة والورك بالكامل أو الجزئي</p>
+          </div>
+          <div class="specialty-item">
+            <h3>علاج الكسور</h3>
+            <p>علاج كسور العظام المختلفة بما في ذلك الكسور المعقدة والحوادث</p>
+          </div>
+          <div class="specialty-item">
+            <h3>جراحات المناظير</h3>
+            <p>مناظير الركبة والكتف لإصابات الأربطة والغضاريف</p>
+          </div>
+          <div class="specialty-item">
+            <h3>علاج آلام الظهر والرقبة</h3>
+            <p>تشخيص وعلاج آلام الظهر والرقبة المزمنة</p>
+          </div>
+          <div class="specialty-item">
+            <h3>جراحات العظام للأطفال</h3>
+            <p>علاج تشوهات العظام الخلقية ومشاكل النمو عند الأطفال</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="appointment">
+        <h2>حجز موعد</h2>
+        <form onsubmit="prvent">
+          <div class="form-group">
+            <label for="name">الاسم بالكامل</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="date">تاريخ الموعد</label>
+            <input type="date" id="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">وقت الموعد</label>
+            <select id="time" required>
+              <option value="">اختر الوقت</option>
+              <option value="9-11">9 ص - 11 ص</option>
+              <option value="11-1">11 ص - 1 م</option>
+              <option value="4-6">4 م - 6 م</option>
+              <option value="6-8">6 م - 8 م</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes">ملاحظات (اختياري)</label>
+            <textarea id="notes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn">تأكيد الحجز</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>عيادة د. أحمد محمد لجراحة العظام - جميع الحقوق محفوظة &copy; 2023</p>
+      <p>العنوان: شارع النصر، المبنى الطبي، الدور الثالث، القاهرة</p>
+      <p>هاتف: 01234567890 - البريد الإلكتروني: info@orthoclinic.com</p>
+    </div>
+
+    <!-- إضافة Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script>
+      // ظهور زر العودة للأعلى عند التمرير
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        var backToTopBtn = document.getElementById("backToTop");
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backToTopBtn.style.display = "flex";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      // عند النقر على زر العودة للأعلى
+      document
+        .getElementById("backToTop")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+    </script>
+  </body>
+</html>
