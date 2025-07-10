@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عالم الطفولة - عيادة طب الأطفال التخصصية</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #00bcd4;
+        --secondary-color: #80deea;
+        --whatsapp-color: #25d366;
+        --dark-color: #333;
+        --light-color: #e0f7fa;
+        --accent-color: #ff9800;
+      }
+
+      body {
+        font-family: "Tajawal", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-color);
+        color: var(--dark-color);
+        scroll-behavior: smooth;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 Q50,80 0,100 L0,0 Z"/></svg>');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 2.8rem;
+        animation: fadeInDown 1s;
+        position: relative;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header p {
+        font-size: 1.3rem;
+        margin-top: 15px;
+        animation: fadeInDown 1s 0.3s both;
+        position: relative;
+      }
+
+      .nav {
+        background-color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-list li {
+        position: relative;
+      }
+
+      .nav-list a {
+        display: block;
+        padding: 18px 25px;
+        color: var(--dark-color);
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .nav-list a:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-list a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 25px;
+        width: 0;
+        height: 4px;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .nav-list a:hover::after {
+        width: calc(100% - 50px);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      .doctors-section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 50px;
+        position: relative;
+        padding-bottom: 20px;
+        animation: fadeIn 1s;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: 150px;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 2px;
+      }
+
+      .doctors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 35px;
+      }
+
+      .doctor-card {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        opacity: 0;
+        transform: translateY(30px);
+        position: relative;
+      }
+
+      .doctor-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 188, 212, 0.1),
+          rgba(255, 152, 0, 0.05)
+        );
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .doctor-card:hover::before {
+        opacity: 1;
+      }
+
+      .doctor-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .doctor-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .doctor-image {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .doctor-image::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to top, white, transparent);
+        z-index: 1;
+      }
+
+      .doctor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .doctor-card:hover .doctor-image img {
+        transform: scale(1.12);
+      }
+
+      .doctor-info {
+        padding: 25px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .doctor-name {
+        color: var(--primary-color);
+        margin: 0 0 15px;
+        font-size: 1.6rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .doctor-name::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent-color);
+        border-radius: 3px;
+      }
+
+      .doctor-specialty {
+        color: var(--accent-color);
+        font-weight: bold;
+        margin: 0 0 15px;
+        font-size: 1.1rem;
+      }
+
+      .doctor-details {
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+
+      .doctor-details p {
+        margin: 8px 0;
+        position: relative;
+        padding-right: 25px;
+      }
+
+      .doctor-details i {
+        color: var(--primary-color);
+        width: 22px;
+        text-align: center;
+        margin-left: 8px;
+        font-size: 1.1rem;
+      }
+
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--whatsapp-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #128c7e;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      }
+
+      .whatsapp-btn i {
+        margin-left: 10px;
+        font-size: 1.3rem;
+      }
+
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        text-align: center;
+        padding: 40px;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,100 L100,100 L100,0 Q50,20 0,0 L0,100 Z"/></svg>');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .footer-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer p {
+        margin: 10px 0;
+        font-size: 1.1rem;
+      }
+
+      .footer-logo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background-color: var(--accent-color);
+        color: white;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(255, 152, 0, 0.3);
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-8px) rotate(360deg);
+        box-shadow: 0 10px 25px rgba(0, 188, 212, 0.4);
+      }
+
+      .floating-icons {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 100;
+      }
+
+      .floating-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .floating-icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(0);
+        transition: transform 0.3s ease;
+        border-radius: 50%;
+      }
+
+      .floating-icon:hover::after {
+        transform: scale(1);
+      }
+
+      .whatsapp-icon {
+        background-color: var(--whatsapp-color);
+      }
+
+      .phone-icon {
+        background-color: var(--primary-color);
+      }
+
+      .floating-icon:hover {
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 992px) {
+        .header h1 {
+          font-size: 2.3rem;
+        }
+
+        .header p {
+          font-size: 1.1rem;
+        }
+
+        .nav-list a {
+          padding: 15px 20px;
+          font-size: 1rem;
+        }
+
+        .doctors-grid {
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 40px 20px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .nav-list {
+          flex-wrap: wrap;
+        }
+
+        .nav-list li {
+          flex: 1 0 auto;
+          text-align: center;
+        }
+
+        .nav-list a {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+        }
+
+        .doctors-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .doctor-image {
+          height: 250px;
+        }
+
+        .back-to-top,
+        .floating-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+          bottom: 30px;
+        }
+
+        .back-to-top {
+          right: 30px;
+        }
+
+        .floating-icons {
+          left: 30px;
+          bottom: 30px;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+        }
+
+        .doctor-name {
+          font-size: 1.4rem;
+        }
+
+        .doctor-specialty {
+          font-size: 1rem;
+        }
+
+        .doctor-details p {
+          font-size: 0.9rem;
+        }
+
+        .whatsapp-btn {
+          font-size: 1rem;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animate__animated animate__fadeIn">
+      <h1>عالم الطفولة</h1>
+      <p>عيادة طب الأطفال التخصصية - رعاية مميزة لأطفالكم</p>
+    </div>
+    <div class="container">
+      <section id="doctors" class="doctors-section">
+        <h2 class="section-title animate__animated animate__fadeIn">
+          أطباء الأطفال المتخصصين
+        </h2>
+
+        <div class="doctors-grid">
+          <!-- الطبيب الأول -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتورة سامية محمد"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. سامية محمد</h3>
+              <p class="doctor-specialty">استشارية طب الأطفال وحديثي الولادة</p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> دكتوراه في طب الأطفال -
+                  جامعة القاهرة
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 15 سنة خبرة في طب الأطفال
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: القاهرة، مصر
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: السبت -
+                  الأربعاء (9ص - 5م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية المصرية لطب
+                  الأطفال
+                </p>
+              </div>
+              <a
+                href="https://wa.me/20123456789"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- الطبيب الثاني -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1551601651-bc60f254d532?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتور أحمد خالد"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. أحمد خالد</h3>
+              <p class="doctor-specialty">
+                استشاري أمراض الأطفال والجهاز الهضمي
+              </p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> زمالة أمراض الجهاز
+                  الهضمي للأطفال - جامعة لندن
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 12 سنة خبرة في طب الأطفال
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: الرياض،
+                  السعودية
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: الأحد -
+                  الخميس (8ص - 4م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية الأوروبية لطب
+                  الأطفال
+                </p>
+              </div>
+              <a
+                href="https://wa.me/966501234567"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- الطبيب الثالث -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتورة ياسمين علي"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. ياسمين علي</h3>
+              <p class="doctor-specialty">
+                استشارية طب الأطفال وأمراض الحساسية
+              </p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> ماجستير أمراض الحساسية
+                  والمناعة - جامعة الإسكندرية
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 10 سنوات خبرة في طب الأطفال
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: دبي، الإمارات
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: السبت -
+                  الخميس (10ص - 6م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية الدولية لأمراض
+                  الحساسية
+                </p>
+              </div>
+              <a
+                href="https://wa.me/971501234567"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- يمكن إضافة أقسام أخرى هنا -->
+    </div>
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">عالم الطفولة</div>
+        <p>عيادة طب الأطفال التخصصية - رعاية مميزة لأطفالكم</p>
+        <p>هاتف: 01234567890 - البريد الإلكتروني: info@children-clinic.com</p>
+        <p>جميع الحقوق محفوظة &copy; 2023</p>
+      </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="floating-icons">
+      <a
+        href="https://wa.me/20123456789"
+        class="floating-icon whatsapp-icon"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:01234567890" class="floating-icon phone-icon">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+
+    <script>
+      // ظهور زر العودة للأعلى عند التمرير
+      window.onscroll = function () {
+        scrollFunction();
+        animateDoctorCards();
+      };
+
+      function scrollFunction() {
+        var backToTopBtn = document.getElementById("backToTop");
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backToTopBtn.style.display = "flex";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      // عند النقر على زر العودة للأعلى
+      document
+        .getElementById("backToTop")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+      // تأثيرات ظهور بطاقات الأطباء عند التمرير
+      function animateDoctorCards() {
+        const doctorCards = document.querySelectorAll(".doctor-card");
+        const windowHeight = window.innerHeight;
+
+        doctorCards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const cardVisible = 200;
+
+          if (cardPosition < windowHeight - cardVisible) {
+            card.classList.add("visible");
+          }
+        });
+      }
+
+      // تشغيل الوظيفة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", function () {
+        animateDoctorCards();
+
+        // إضافة تأثيرات للبطاقات عند التحميل
+        const cards = document.querySelectorAll(".doctor-card");
+        cards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // تأثيرات للعناصر العائمة
+        const floatingIcons = document.querySelectorAll(".floating-icon");
+        floatingIcons.forEach((icon, index) => {
+          icon.style.animation = `bounce 2s infinite ${index * 0.2}s`;
+        });
+      });
+    </script>
+  </body>
+</html>
