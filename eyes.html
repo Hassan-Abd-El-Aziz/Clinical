@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز العيون التخصصي - أفضل أطباء العيون</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #0d47a1;
+        --secondary-color: #42a5f5;
+        --whatsapp-color: #25d366;
+        --dark-color: #333;
+        --light-color: #f5f5f5;
+      }
+
+      body {
+        font-family: "Tajawal", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+        color: var(--dark-color);
+        scroll-behavior: smooth;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f0f8ff" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f0f8ff" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f0f8ff"/></svg>');
+        background-size: cover;
+        z-index: 1;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        animation: fadeInDown 1s;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        animation: fadeInDown 1s 0.3s both;
+      }
+
+      .nav {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-list li {
+        position: relative;
+      }
+
+      .nav-list a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--dark-color);
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .nav-list a:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-list a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        width: 0;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-list a:hover::after {
+        width: calc(100% - 40px);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .doctors-section {
+        margin-bottom: 50px;
+      }
+
+      .section-title {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 15px;
+        animation: fadeIn 1s;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+      }
+
+      .doctors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .doctor-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .doctor-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .doctor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .doctor-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .doctor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .doctor-card:hover .doctor-image img {
+        transform: scale(1.1);
+      }
+
+      .doctor-info {
+        padding: 20px;
+      }
+
+      .doctor-name {
+        color: var(--primary-color);
+        margin: 0 0 10px;
+        font-size: 1.5rem;
+      }
+
+      .doctor-specialty {
+        color: var(--secondary-color);
+        font-weight: bold;
+        margin: 0 0 10px;
+      }
+
+      .doctor-details {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .doctor-details p {
+        margin: 5px 0;
+      }
+
+      .doctor-details i {
+        color: var(--secondary-color);
+        width: 20px;
+        text-align: center;
+        margin-left: 5px;
+      }
+
+      .whatsapp-btn {
+        display: inline-block;
+        background-color: var(--whatsapp-color);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        width: 100%;
+        text-align: center;
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #128c7e;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .whatsapp-btn i {
+        margin-left: 8px;
+      }
+
+      .footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 30px;
+        margin-top: 50px;
+      }
+
+      .footer p {
+        margin: 5px 0;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .nav-list {
+          flex-wrap: wrap;
+        }
+
+        .nav-list li {
+          flex: 1 0 auto;
+          text-align: center;
+        }
+
+        .doctors-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .back-to-top {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animate__animated animate__fadeIn">
+      <h1>مركز العيون التخصصي</h1>
+      <p>أفضل أطباء العيون</p>
+    </div>
+
+    <div class="container">
+      <section id="doctors" class="doctors-section">
+        <h2 class="section-title animate__animated animate__fadeIn">
+          أطباء العيون المتخصصين
+        </h2>
+
+        <div class="doctors-grid">
+          <!-- الطبيب الأول -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتور أحمد السيد"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. أحمد السيد</h3>
+              <p class="doctor-specialty">
+                استشاري جراحات القرنية وتصحيح النظر
+              </p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> دكتوراه في جراحات العيون
+                  - جامعة القاهرة
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 20 سنة خبرة في جراحات العيون
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: القاهرة، مصر
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: السبت -
+                  الأربعاء (9ص - 5م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية الأمريكية
+                  لجراحي العيون
+                </p>
+              </div>
+              <a
+                href="https://wa.me/20123456789"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- الطبيب الثاني -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتورة مريم محمد"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. مريم محمد</h3>
+              <p class="doctor-specialty">
+                استشارية طب وجراحة الشبكية والجسم الزجاجي
+              </p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> زمالة جراحة الشبكية -
+                  جامعة هارفارد
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 15 سنة خبرة في جراحات الشبكية
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: الرياض،
+                  السعودية
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: الأحد -
+                  الخميس (10ص - 8م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية الأوروبية
+                  لشبكية العين
+                </p>
+              </div>
+              <a
+                href="https://wa.me/966501234567"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- الطبيب الثالث -->
+          <div class="doctor-card">
+            <div class="doctor-image">
+              <img
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="الدكتور خالد عبدالله"
+              />
+            </div>
+            <div class="doctor-info">
+              <h3 class="doctor-name">د. خالد عبدالله</h3>
+              <p class="doctor-specialty">
+                استشاري جراحات المياه البيضاء وتصحيح النظر بالليزر
+              </p>
+              <div class="doctor-details">
+                <p>
+                  <i class="fas fa-graduation-cap"></i> ماجستير جراحة العيون -
+                  جامعة الإسكندرية
+                </p>
+                <p>
+                  <i class="fas fa-briefcase"></i> 12 سنة خبرة في جراحات العيون
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> العيادة: دبي، الإمارات
+                </p>
+                <p>
+                  <i class="fas fa-calendar-alt"></i> مواعيد العمل: السبت -
+                  الخميس (8ص - 4م)
+                </p>
+                <p>
+                  <i class="fas fa-certificate"></i> عضو الجمعية الدولية لجراحات
+                  تصحيح النظر
+                </p>
+              </div>
+              <a
+                href="https://wa.me/971501234567"
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- يمكن إضافة أقسام أخرى هنا -->
+    </div>
+
+    <div class="footer">
+      <p>مركز العيون التخصصي - جميع الحقوق محفوظة &copy; 2023</p>
+      <p>هاتف: 01234567890 - البريد الإلكتروني: info@eye-center.com</p>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+      // ظهور زر العودة للأعلى عند التمرير
+      window.onscroll = function () {
+        scrollFunction();
+        animateDoctorCards();
+      };
+
+      function scrollFunction() {
+        var backToTopBtn = document.getElementById("backToTop");
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backToTopBtn.style.display = "flex";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      // عند النقر على زر العودة للأعلى
+      document
+        .getElementById("backToTop")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+      // تأثيرات ظهور بطاقات الأطباء عند التمرير
+      function animateDoctorCards() {
+        const doctorCards = document.querySelectorAll(".doctor-card");
+        const windowHeight = window.innerHeight;
+
+        doctorCards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const cardVisible = 150;
+
+          if (cardPosition < windowHeight - cardVisible) {
+            card.classList.add("visible");
+          }
+        });
+      }
+
+      // تشغيل الوظيفة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", function () {
+        animateDoctorCards();
+
+        // إضافة تأثيرات للبطاقات عند التحميل
+        const cards = document.querySelectorAll(".doctor-card");
+        cards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.1}s`;
+        });
+      });
+    </script>
+  </body>
+</html>
